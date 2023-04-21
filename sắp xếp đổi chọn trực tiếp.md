@@ -3,7 +3,6 @@ Code:
 cách 1
 #include <iostream>
 using namespace std;
-
 void selectionSort(int arr[], int n) {
     int min_idx, temp;
     for (int i = 0; i < n-1; i++) {
