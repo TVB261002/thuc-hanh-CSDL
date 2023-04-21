@@ -1,7 +1,9 @@
 ĐỀ:Cho mảng gồm các phần tử { 41, 23, 4, 14, 56, 1 } nhập vào từ bàn phím. Viết chương trình để sắp xếp. Sử dụng phương pháp sắp xếp chọn trực tiếp để sắp xếp.
+
 Code:
 cách 1
 #include <iostream>
+    
 using namespace std;
 void selectionSort(int arr[], int n) {
     int min_idx, temp;
