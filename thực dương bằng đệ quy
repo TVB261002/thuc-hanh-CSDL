@@ -1,0 +1,23 @@
+đề:Cho mảng 1 chiều các số thực. Viết hàm đếm số lượng giá trị dương trong mảng bằng phương pháp đệ quy.
+code:#include <iostream>
+using namespace std;
+
+int countPositive(float arr[], int n) {
+    if (n == 0) {
+        return 0;
+    } else {
+        int count = countPositive(arr, n - 1);
+        if (arr[n - 1] > 0) {
+            count++;
+        }
+        return count;
+    }
+}
+
+int main() {
+    float arr[] = { -1.2, 3.4, -5.6, 7.8, -9.0, 1.2 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int count = countPositive(arr, n);
+    cout << "Number of positive values in the array: " << count << endl;
+    return 0;
+}
