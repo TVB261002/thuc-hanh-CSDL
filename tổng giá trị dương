@@ -1,0 +1,24 @@
+Đề:Cho mảng 1 chiều các số thực. Hãy viết hàm đệ quy tính tổng các giá trị dương có trong mảng
+code:#include <iostream>
+
+double recursivePositiveSum(double arr[], int size, int index = 0, double sum = 0) {
+    if (index >= size) {
+        return sum;
+    }
+
+    if (arr[index] > 0) {
+        sum += arr[index];
+    }
+
+    return recursivePositiveSum(arr, size, index + 1, sum);
+}
+
+int main() {
+    double arr[] = {1.5, -2.0, 3.7, -4.2, 5.3};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    double sum = recursivePositiveSum(arr, size);
+    std::cout << "Sum of positive values: " << sum << std::endl;
+
+    return 0;
+}
