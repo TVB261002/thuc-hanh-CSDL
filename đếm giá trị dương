@@ -1,0 +1,25 @@
+Đề:Cho mảng 1 chiều các số thực. Hãy viết hàm đệ quy đếm số lượng giá trị dương có trong mảng.
+code:#include <iostream>
+
+int countPositiveRecursive(double arr[], int size) {
+    if (size == 0) {
+        return 0; // kết thúc đệ quy nếu mảng rỗng
+    } else {
+        int count = countPositiveRecursive(arr + 1, size - 1); // gọi đệ quy với mảng đã bỏ đi phần tử đầu tiên
+        if (arr[0] > 0) {
+            return count + 1; // nếu phần tử đầu tiên là số dương, tăng biến đếm lên 1
+        } else {
+            return count; // nếu phần tử đầu tiên không là số dương, giữ nguyên giá trị biến đếm
+        }
+    }
+}
+
+int main() {
+    double arr[] = {1.5, -2.3, 4.7, -0.8, 3.2, -1.1, 5.6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    int positiveCount = countPositiveRecursive(arr, size);
+    std::cout << "Số lượng giá trị dương trong mảng là: " << positiveCount << std::endl;
+
+    return 0;
+}
