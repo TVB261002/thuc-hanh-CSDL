@@ -1,0 +1,20 @@
+đề:Cho mảng 1 chiều các số nguyên. Viết hàm đệ quy xuất mảng.
+code:#include <iostream>
+
+void recursivePrint(int arr[], int size) {
+    if (size == 0) {
+        return; // k?t thúc d? quy n?u m?ng r?ng
+    } else {
+        std::cout << arr[0] << " "; // in ph?n t? d?u tiên c?a m?ng
+        recursivePrint(arr + 1, size - 1); // g?i d? quy v?i m?ng dã b? di ph?n t? d?u tiên
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    recursivePrint(arr, size); // k?t qu?: 1 2 3 4 5
+    
+    return 0;
+}
