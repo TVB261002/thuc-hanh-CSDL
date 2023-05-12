@@ -1,0 +1,6 @@
+ĐỀ:Hãy khai báo cấu trúc dữ liệu của cây nhị phân các số nguyên
+code:struct TreeNode {
+    int value;
+    TreeNode* left;
+    TreeNode* right;
+};
