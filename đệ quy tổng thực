@@ -1,0 +1,23 @@
+đề:17/Cho mảng 1 chiều các số thực. Hãy viết hàm đệ quy tính tổng các giá trị có trong mảng.
+code:#include <iostream>
+
+
+double tinhTong(double arr[], int n) {
+    if (n == 0) {
+        return 0;
+    }
+    
+  
+    return arr[n-1] + tinhTong(arr, n-1);
+}
+
+int main() {
+    const int size = 5;
+    double arr[size] = {1.5, 2.0, 3.7, 4.2, 5.9};
+    
+    double tong = tinhTong(arr, size);
+    
+    std::cout << "Tong cua mang: " << tong << std::endl;
+    
+    return 0;
+}
