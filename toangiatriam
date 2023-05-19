@@ -1,0 +1,44 @@
+Đề:Cho mảng 1 chiều các số thực. Hãy viết hàm đệ quy kiểm tra mảng có thỏa mảng tính chất “toàn giá trị âm”
+code :
+#include <iostream>
+
+const int MAX_SIZE = 100; 
+
+int nhapMang(double arr[]) {
+    int n;
+    
+    std::cout << "Nhap so luong phan tu cua mang: ";
+    std::cin >> n;
+    
+    std::cout << "Nhap cac phan tu cua mang:\n";
+    for (int i = 0; i < n; i++) {
+        std::cout << "Phan tu thu " << i + 1 << ": ";
+        std::cin >> arr[i];
+    }
+    
+    return n; 
+
+bool kiemTraToanAm(double arr[], int start, int end) {
+    // Tru?ng h?p co b?n: n?u ch? còn m?t ph?n t?
+    if (start == end) {
+        return arr[start] < 0;
+    }
+    
+    
+    if (arr[start] >= 0) {
+        return false;
+    }
+    
+    return kiemTraToanAm(arr, start + 1, end);
+}
+
+int main() {
+    double arr[MAX_SIZE];
+    int size = nhapMang(arr);
+    
+    bool result = kiemTraToanAm(arr, 0, size - 1);
+    
+    std::cout << "Mang nhap vao " << (result ? "thoa" : "khong thoa") << " tinh chat 'toan gia tri am'." << std::endl;
+    
+    return 0;
+}
